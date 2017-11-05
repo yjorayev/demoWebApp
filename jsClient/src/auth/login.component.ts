@@ -10,7 +10,7 @@ export class LoginComponent implements OnInit {
     constructor(private _authService: AuthService) { }
 
     public ngOnInit(): void {
-
+        console.log('login component onInit');
         this._authService.requestSignIn();
     }
 }

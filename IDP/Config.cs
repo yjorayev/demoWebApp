@@ -46,15 +46,15 @@ namespace IDP
 
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
-                    RedirectUris =           { "http://localhost:5003/callback.html" },
-                    PostLogoutRedirectUris = { "http://localhost:5003/index.html" },
+                    RedirectUris =           { "http://localhost:5003/logincallback", "http://localhost:5003/loginrenew" },
+                    PostLogoutRedirectUris = { "http://localhost:5003/logoutcallback" },
                     AllowedCorsOrigins =     { "http://localhost:5003" },
                     RequireConsent = false,
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
-                        "api1"
+                        "api"
                     }
                 },
                  new Client

@@ -35,12 +35,12 @@ import { AuthGuard } from './auth/authGuard';
                     { path: 'counter', component: CounterComponent }
                 ]
             },
-            { path: '**', redirectTo: 'home' },
             { path: 'login', component: LoginComponent },
             { path: 'logincallback', component: LoginCallbackComponent },
             { path: 'loginrenew', component: LoginRenewComponent },
             { path: 'logout', component: LogoutComponent },
             { path: 'logoutcallback', component: LogoutCallbackComponent },
+            { path: '**', redirectTo: 'home' }
         ])
     ],
     declarations: [

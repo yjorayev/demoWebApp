@@ -35,6 +35,9 @@ module.exports = {
             {
                 test: /\.html$/,
                 loader: 'html-loader'
+                //options: {
+                //    minimize: true
+                //}
             },
             {
                 test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,

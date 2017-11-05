@@ -25,10 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="src\auth\login-callback.component.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="src\auth\login-callback\" />
     <Folder Include="src\auth\login-renew\" />
     <Folder Include="src\auth\login\" />

@@ -8,6 +8,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     constructor(private _authService: AuthService, private _router: Router) { }
 
     public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
+        console.log('can activate called');
         return this.canActivateInternal(route, state);
     }
 
@@ -17,12 +18,15 @@ export class AuthGuard implements CanActivate, CanActivateChild {
 
     private canActivateInternal(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
         let url = state.url;
+        console.log(`AuthGuard.canActivate() - activation attempted to ${url}.`);
 
         return this._authService.isAuthorized().map(isAuthorized => {
             if (isAuthorized) {
+                console.log('AuthGuard.canActivate() - authorized.');
                 return true;
             }
 
+            console.log(`AuthGuard.canActivate() - not authorized. redirecting to login.`);
             this._authService.redirectToLoginFrom(url);
             return false;
         });

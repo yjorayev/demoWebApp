@@ -30,6 +30,8 @@ export class AuthService {
 
         this._manager = new Oidc.UserManager(settings);
         //this._manager.addSilentRenewError(error => this.onSilentRenewError(error));
+        console.log('AuthService.ctor() - creating Oidc.UserManager with settings:');
+        console.log(JSON.stringify(settings));
     }
 
     public createUnauthorizedResponse(error: any): Observable<any> {
@@ -105,7 +107,7 @@ export class AuthService {
     }
 
     public requestSignIn(): void {
-
+        console.log('request to signin');
         this._manager.signinRedirect({ data: this._redirectedFromUrl });
     }
 
@@ -119,6 +121,7 @@ export class AuthService {
 
         this._redirectedFromUrl = url;
         let promise = this._router.navigate(['/login']);
+        console.log('navigate to login called');
         return Observable.fromPromise(promise);
     }
 

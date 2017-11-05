@@ -3,7 +3,7 @@ import { AuthService } from './auth.service';
 
 @Component({
     selector: 'one-login-callback',
-    template: ''
+    templateUrl: './login-callback.component.html'
     //styleUrls: ['../../styles/login-callback.component.scss']
 })
 export class LoginCallbackComponent {
